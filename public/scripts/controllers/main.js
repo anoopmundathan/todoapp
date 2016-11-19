@@ -1,26 +1,26 @@
 angular.module('todoApp')
-	.controller('mainCtrl', function($scope) {
-		$scope.helloWorld = function() {
-			console.log('Hello');
-		};
+	.controller('mainCtrl', function($scope, dataService) {
+
 
 		$scope.todos = [
-			{
-				"name": "Buy Milk"
-			},
-			{
-				"name": "Get Keys"
-			},
-			{
-				"name": "Silikon Valley"
-			}
-		]
+			{"name": "Buy Milk"},
+			{"name": "Get Keys"},
+			{"name": "Silikon Valley"}
+		];
 
-		$scope.addTask = () => {
-			$scope.todos.push({"name" : "New Task"});
+		//Delete Todo
+		$scope.deleteTodo = (todo, index) => {
+			dataService.deleteTodo(todo);
+			$scope.todos.splice(index, 1);
+		}
+	})
+	.service('dataService', function() {
+		this.deleteTodo = (todo, index) => {
+			console.log(todo.name + ' deleted');
+			// Other Logic
 		};
 
-		$scope.deleteTask = () => {
-			$scope.todos.pop();
+		this.saveTodo = (todo) => {
+			console.log(todo.name + 'saved');
 		};
 	});
