@@ -7,10 +7,32 @@
 		 <title>My App</title>
 		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
 	</head>
-	<body>
-		 <div class="container">
-			 <h1>OK</h1>
+	<body ng-app="todoApp">
+
+		<div class="raw">
+			<h1 class="display-4">Todo App</h1>
+
+		 <div class="container" ng-controller="mainCtrl">
+		 	<div ng-repeat="todo in todos">
+		 		<input type="checkbox" ng-model="todo.completed"/>
+		 		<label ng-hide="editing">{{ todo.name }}</label>
+		 		<input ng-blur="editing=false" ng-show="editing" type="text" ng-model="todo.name">
+
+		 		<div>
+		 			<a href="" ng-click="editing = !editing">Edit</a>
+		 			<a href="">Save</a>
+		 			<a href="" ng-click="helloWorld()">Delete</a>	
+		 		</div>
+		 		<hr>
+
+		 	</div>	
+		 		
 		 </div>
+		</div>
+		 
+
 	 <script src="vendor/angular.js"></script>
+	 <script src="scripts/app.js"></script>
+	 <script src="scripts/controllers/main.js"></script>
 	</body>
  </html>

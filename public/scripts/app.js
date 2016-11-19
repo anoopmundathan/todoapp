@@ -1,3 +1,1 @@
-(function() {
-  console.log('Hello');
-})();
+angular.module('todoApp', []);
