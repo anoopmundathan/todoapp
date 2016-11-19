@@ -15,3 +15,5 @@ $ npm install
 ```
 $ npm start
 ```
+### View
+Visit to ```localhost:3000```
