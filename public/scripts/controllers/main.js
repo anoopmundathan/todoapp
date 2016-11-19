@@ -21,7 +21,9 @@ angular.module('todoApp')
 
 		// Add Todo
 		$scope.addTodo = () => {
-			$scope.todos.push({name : "New Todo"});
+			// $scope.todos.push({name : "New Todo"});
+			// Add Todos at the begining of the array
+			$scope.todos.unshift({name: "New Todo"});
 		};
 
 });
