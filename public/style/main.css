@@ -11,6 +11,10 @@ body {
 	background-color: #eee;
 }
 
+a {
+	text-decoration: none;
+}
+
 header h1 {
 	text-align: center;
 }
@@ -38,9 +42,6 @@ header h1 {
 	color: red;
 }
 
-.items {
-	
-}
 
 .action {
 	padding-top: 10px;
