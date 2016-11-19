@@ -1,10 +1,10 @@
 # todoapp
-> Angular todo app
+> Another Todo App in Angular
 
 ## Getting Started
 ### Setup
 ```
-$ git clone
+$ git clone https://github.com/anoopmundathan/todoapp.git
 $ cd todoapp
 ```
 ### Install
