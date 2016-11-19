@@ -1,0 +1,55 @@
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+
+	margin: 0;
+	border: 0;
+	font: 16px "Helvetica Neue";
+	background-color: #eee;
+}
+
+header h1 {
+	text-align: center;
+}
+
+.container {
+	width: 700px;
+	margin: 0 auto;
+	background-color: #fff;
+	border-radius: 10px;
+}
+
+.todo:nth-of-type(1) {
+	
+}
+
+.todo {
+	width: 70%;
+	margin: 30px auto;
+	border-top: 20px solid #eee;
+	padding-top: 10px;
+	
+}
+
+.todoclick {
+	color: red;
+}
+
+.items {
+	
+}
+
+.action {
+	padding-top: 10px;
+}
+
+.edited:after {
+	content: "   edited";
+	text-transform: uppercase;
+	font-size: 14px;
+	padding-left: 5px;
+	color: #C0C0C0;
+}
