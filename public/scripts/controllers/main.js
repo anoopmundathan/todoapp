@@ -1,12 +1,12 @@
+'use strict';
+
 angular.module('todoApp')
 	.controller('mainCtrl', function($scope, dataService) {
-
-
-		$scope.todos = [
-			{"name": "Buy Milk"},
-			{"name": "Get Keys"},
-			{"name": "Silikon Valley"}
-		];
+	
+		// Get Todos
+		dataService.getTodos(function(response) {
+			$scope.todos = response.data;
+		});
 
 		// Delete Todo
 		$scope.deleteTodo = (todo, index) => {
@@ -24,15 +24,5 @@ angular.module('todoApp')
 			$scope.todos.push({name : "New Todo"});
 		};
 
-	})
-	.service('dataService', function() {
-		this.deleteTodo = (todo, index) => {
-			console.log(todo.name + ' deleted');
-			// Other Logic
-		};
-
-		this.saveTodo = (todo) => {
-			console.log(todo);
-			console.log(todo.name + ' saved');
-		};
-	});
+});
+	
