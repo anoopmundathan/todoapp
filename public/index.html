@@ -19,7 +19,7 @@
 		 	</div>
 
 			<div class="todo"><label for="">Search Task: </label><input type="text" ng-model="task"></div>
-			<div class="todo" ng-repeat="todo in todos | filter:task">
+			<div class="todo" ng-repeat="todo in todos | orderBy: 'completed' | filter:task" ng-class="{completed:todo.completed}" ng-init="todo.completed=false">
 				
 			 	<div class="items">
 			 		<input type="checkbox" ng-model="todo.completed"/>
