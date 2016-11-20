@@ -14,24 +14,28 @@
 		</header>
 		
 		 <div class="container" ng-controller="mainCtrl">
-		 	<div class="todo">
-		 		<a href="" ng-click="addTodo()">Add Task</a>	
+		 	<div class="add-todo tw">
+		 		<a href="" ng-click="addTodo()">+Add New Todo</a>	
 		 	</div>
 
-			<div class="todo"><label for="">Search Todo: </label><input type="text" ng-model="task"></div>
-			<div class="todo" ng-repeat="todo in todos | orderBy: 'completed' | filter:task" ng-class="{completed:todo.completed}" ng-init="todo.completed=false">
+			<div class="todo tw"><label for="">Search Todo: </label><input type="text" ng-model="task"></div>
+			<div class="todo tw" ng-repeat="todo in todos | orderBy: 'completed' | filter:task" ng-class="{completed:todo.completed}" ng-init="todo.completed=false">
 				
 			 	<div class="items">
 			 		<input type="checkbox" ng-model="todo.completed"/>
 			 		<label ng-hide="editing" ng-class="{edited: todo.change, completed: todo.completed}" >{{ todo.name }}</label>
 			 		<input ng-change="todo.change=true" ng-blur="editing=false" ng-show="editing" type="text" ng-model="todo.name">
+
+			 		<ul>
+			 				<li><a href="" ng-click="editing = !editing">Edit</a></li>
+			 				<li><a href="" ng-click="saveTodo(todo)">Save</a></li>
+			 				<li><a href="" ng-click="deleteTodo(todo, $index)">Delete</a></li>
+			 		</ul>
 			 	</div>	
 
-			 	<div class="action">
-			 			<a href="" ng-click="editing = !editing">Edit</a>
-			 			<a href="" ng-click="saveTodo(todo)">Save</a>
-			 			<a href="" ng-click="deleteTodo(todo, $index)">Delete</a>	
-			 	</div>
+			 	
+			 			
+			 	
 		 	</div>
 
 		 </div> 

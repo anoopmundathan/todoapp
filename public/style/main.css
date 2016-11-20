@@ -4,7 +4,6 @@
 
 html,
 body {
-
 	margin: 0;
 	border: 0;
 	font: 16px "Helvetica Neue";
@@ -20,31 +19,46 @@ header h1 {
 }
 
 .container {
-	width: 700px;
+	width: 100%;
 	margin: 0 auto;
 	background-color: #fff;
 	border-radius: 10px;
+	border-top: 30px solid dodgerblue;
 }
 
-.todo:nth-of-type(1) {
-	
+.tw {
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 30px;
+}
+
+.add-todo {	
+	padding-top: 30px;
+	font-size: 1.5em;
 }
 
 .todo {
-	width: 70%;
-	margin: 10px auto;
-	border-top: 10px solid #eee;
+	border-top: 3px solid #eee;
 	padding-top: 10px;
-	
 }
 
-.todoclick {
-	color: red;
+.items {
+	/*width: 70%;*/
 }
 
+ul {
+	list-style: none;
+	display: inline;
+}
 
-.action {
-	padding-top: 10px;
+ul li {
+	/*display: inline;*/
+	float: right;
+}
+
+ul li a {
+	padding: 5px 5px;
 }
 
 .edited:after {
@@ -61,5 +75,18 @@ header h1 {
 
 input[type="text"] {
 	min-height: 30px;
-	min-width: 300px;
+	min-width: 350px;
+}
+
+@media screen and (min-width: 700px) {
+	
+	.container {
+		width: 70%;
+	}
+
+	.tw {
+		width: 70%;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
